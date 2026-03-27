@@ -22,13 +22,12 @@
 </head>
 <body class="bg-gray-50">
 
-    <!-- HEADER - Only Home, Login, Register for non-logged in users -->
+    <!-- HEADER -->
     <header class="bg-white border-b border-gray-200 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <div class="flex items-center space-x-8">
                     <div class="flex items-center space-x-2 cursor-pointer" onclick="showPage('home')">
-                        <!-- Orvexa Logo -->
                         <div class="flex flex-col items-start">
                             <div class="flex items-center space-x-1">
                                 <i class="fas fa-microchip text-blue-600 text-2xl"></i>
@@ -37,13 +36,9 @@
                             <span class="text-[10px] text-gray-400 tracking-wide -mt-1">engineering in the future</span>
                         </div>
                     </div>
-                    <nav class="hidden md:flex space-x-6" id="mainNav">
-                        <!-- Dynamic navigation will be inserted here -->
-                    </nav>
+                    <nav class="hidden md:flex space-x-6" id="mainNav"></nav>
                 </div>
-                <div id="authButtons" class="flex items-center gap-3">
-                    <!-- Dynamic auth buttons -->
-                </div>
+                <div id="authButtons" class="flex items-center gap-3"></div>
             </div>
         </div>
     </header>
@@ -51,7 +46,6 @@
     <main>
         <!-- HOME PAGE -->
         <div id="homePage">
-            <!-- Hero Section -->
             <div class="hero-gradient">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
                     <div class="flex flex-col lg:flex-row items-center gap-12">
@@ -77,64 +71,40 @@
                         </div>
                         <div class="flex-1">
                             <div class="bg-white rounded-3xl shadow-xl p-6 grid grid-cols-2 gap-6">
-                                <div class="text-center">
-                                    <div class="text-3xl font-bold text-blue-700">147+</div>
-                                    <div class="text-gray-500 text-sm">Active cases</div>
-                                </div>
-                                <div class="text-center">
-                                    <div class="text-3xl font-bold text-blue-700">38</div>
-                                    <div class="text-gray-500 text-sm">Countries</div>
-                                </div>
-                                <div class="text-center">
-                                    <div class="text-3xl font-bold text-blue-700">82k</div>
-                                    <div class="text-gray-500 text-sm">Verdicts cast</div>
-                                </div>
-                                <div class="text-center">
-                                    <div class="text-3xl font-bold text-blue-700">24/7</div>
-                                    <div class="text-gray-500 text-sm">Live debates</div>
-                                </div>
+                                <div class="text-center"><div class="text-3xl font-bold text-blue-700">147+</div><div class="text-gray-500 text-sm">Active cases</div></div>
+                                <div class="text-center"><div class="text-3xl font-bold text-blue-700">38</div><div class="text-gray-500 text-sm">Countries</div></div>
+                                <div class="text-center"><div class="text-3xl font-bold text-blue-700">82k</div><div class="text-gray-500 text-sm">Verdicts cast</div></div>
+                                <div class="text-center"><div class="text-3xl font-bold text-blue-700">24/7</div><div class="text-gray-500 text-sm">Live debates</div></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- International Verdicts Section -->
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-3">International verdicts in focus</h2>
                 <p class="text-gray-600 text-lg mb-10 border-l-4 border-blue-600 pl-4">Cross-border disputes, human rights, trade wars — your vote fuels the global dialogue.</p>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="featuredCasesGrid">
-                    <!-- Cases will be dynamically loaded -->
-                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="featuredCasesGrid"></div>
             </div>
 
-            <!-- Global Call to Action -->
             <div class="bg-gradient-to-r from-blue-900 to-indigo-900 mx-4 sm:mx-6 lg:mx-8 rounded-3xl p-8 md:p-12 mb-16">
                 <div class="max-w-4xl mx-auto text-center text-white">
                     <h3 class="text-2xl md:text-3xl font-bold mb-3">Join 28,000+ global jurors</h3>
                     <p class="text-blue-100 mb-6">Verdict isn't just a platform — it's a cross-border movement. Every vote helps shape public opinion & legal awareness.</p>
-                    <button id="ctaJoinBtn" class="bg-white text-blue-900 hover:bg-gray-100 px-8 py-3 rounded-full font-semibold transition shadow-lg">
-                        Become a juror <i class="fas fa-arrow-right ml-2"></i>
-                    </button>
+                    <button id="ctaJoinBtn" class="bg-white text-blue-900 hover:bg-gray-100 px-8 py-3 rounded-full font-semibold transition shadow-lg">Become a juror <i class="fas fa-arrow-right ml-2"></i></button>
                 </div>
             </div>
         </div>
 
-        <!-- DASHBOARD PAGE (for logged-in users) -->
+        <!-- DASHBOARD PAGE (for users to see their stats) -->
         <div id="dashboardPage" class="hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
             <div class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-6 mb-8">
                 <div class="flex items-center justify-between flex-wrap gap-4">
                     <div class="flex items-center gap-4">
                         <img id="dashboardAvatar" src="" class="w-16 h-16 rounded-full object-cover bg-gray-200">
-                        <div>
-                            <h2 class="text-2xl font-bold text-gray-800">Welcome, <span id="dashboardUserName"></span>!</h2>
-                            <p class="text-gray-600">Manage your profile and track your activity</p>
-                        </div>
+                        <div><h2 class="text-2xl font-bold text-gray-800">Welcome, <span id="dashboardUserName"></span>!</h2><p class="text-gray-600">Manage your profile and track your activity</p></div>
                     </div>
-                    <button onclick="openProfileModal()" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition">
-                        <i class="fas fa-edit mr-2"></i>Edit Profile
-                    </button>
+                    <button onclick="openProfileModal()" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition"><i class="fas fa-edit mr-2"></i>Edit Profile</button>
                 </div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
@@ -146,21 +116,48 @@
             <div id="userCasesList" class="space-y-4"></div>
         </div>
 
-        <!-- CASES PAGE (only accessible after login) -->
+        <!-- CASES PAGE (default landing after login) -->
         <div id="casesPage" class="hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
             <div class="flex justify-between items-center mb-6">
                 <h1 class="text-3xl font-bold text-gray-800">All International Cases</h1>
-                <button id="casesSubmitBtn" class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-xl text-sm font-semibold transition flex items-center gap-2">
-                    <i class="fas fa-plus-circle"></i> Submit Case
-                </button>
+                <button id="casesSubmitBtn" class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-xl text-sm font-semibold transition flex items-center gap-2"><i class="fas fa-plus-circle"></i> Submit Case</button>
             </div>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-7" id="allCasesContainer"></div>
-            <div class="mt-10 flex justify-center">
-                <nav class="flex items-center gap-2">
-                    <button id="casesPrevPage" class="px-4 py-2 border rounded-lg text-gray-600 hover:bg-gray-100 disabled:opacity-50" disabled>← Previous</button>
-                    <span class="px-3 py-1 bg-blue-600 text-white rounded-lg text-sm font-semibold" id="casesPageIndicator">Page 1</span>
-                    <button id="casesNextPage" class="px-4 py-2 border rounded-lg text-gray-600 hover:bg-gray-100">Next →</button>
-                </nav>
+            <div class="mt-10 flex justify-center"><nav class="flex items-center gap-2"><button id="casesPrevPage" class="px-4 py-2 border rounded-lg text-gray-600 hover:bg-gray-100 disabled:opacity-50" disabled>← Previous</button><span class="px-3 py-1 bg-blue-600 text-white rounded-lg text-sm font-semibold" id="casesPageIndicator">Page 1</span><button id="casesNextPage" class="px-4 py-2 border rounded-lg text-gray-600 hover:bg-gray-100">Next →</button></nav></div>
+        </div>
+
+        <!-- ADMIN PANEL PAGE -->
+        <div id="adminPanelPage" class="hidden">
+            <div class="bg-gradient-to-r from-purple-600 to-indigo-600 text-white py-8 mb-8">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <h1 class="text-3xl font-bold"><i class="fas fa-shield-alt mr-3"></i>Admin Control Panel</h1>
+                    <p class="text-purple-100 mt-2">Manage users, cases, and platform content</p>
+                </div>
+            </div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+                        <div class="bg-gray-50 px-6 py-4 border-b">
+                            <h2 class="text-xl font-bold text-gray-800"><i class="fas fa-users mr-2 text-blue-600"></i>User Management</h2>
+                            <p class="text-sm text-gray-500">Ban/unban users, manage admin roles</p>
+                        </div>
+                        <div class="p-6 max-h-[600px] overflow-y-auto" id="adminUsersList"></div>
+                    </div>
+                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+                        <div class="bg-gray-50 px-6 py-4 border-b">
+                            <h2 class="text-xl font-bold text-gray-800"><i class="fas fa-gavel mr-2 text-green-600"></i>Case Management</h2>
+                            <p class="text-sm text-gray-500">Delete inappropriate cases</p>
+                        </div>
+                        <div class="p-6 max-h-[600px] overflow-y-auto" id="adminCasesList"></div>
+                    </div>
+                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden lg:col-span-2">
+                        <div class="bg-gray-50 px-6 py-4 border-b">
+                            <h2 class="text-xl font-bold text-gray-800"><i class="fas fa-comments mr-2 text-yellow-600"></i>Comment Management</h2>
+                            <p class="text-sm text-gray-500">Monitor and delete inappropriate comments</p>
+                        </div>
+                        <div class="p-6 max-h-[400px] overflow-y-auto" id="adminCommentsList"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
@@ -169,173 +166,23 @@
     <footer class="bg-gray-900 text-white mt-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div>
-                    <div class="flex flex-col items-start mb-4">
-                        <div class="flex items-center space-x-1">
-                            <i class="fas fa-microchip text-2xl text-blue-400"></i>
-                            <span class="text-xl font-bold orvexa-logo">Orvexa</span>
-                        </div>
-                        <span class="text-[10px] text-gray-500 tracking-wide -mt-1">engineering in the future</span>
-                    </div>
-                    <p class="text-gray-400">Global public case debates. Transparency, democracy, and international justice for everyone.</p>
-                </div>
-                <div>
-                    <h4 class="font-semibold mb-4">Explore</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="#" onclick="if(currentUser) showPage('cases'); else openModal('loginModal')" class="hover:text-white transition">Trending cases</a></li>
-                        <li><a href="#" class="hover:text-white transition">Verdict of the month</a></li>
-                        <li><a href="#" class="hover:text-white transition">Ambassador program</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-semibold mb-4">Legal</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="#" class="hover:text-white transition">Terms of debate</a></li>
-                        <li><a href="#" class="hover:text-white transition">Privacy & moderation</a></li>
-                        <li><a href="#" class="hover:text-white transition">Transparency report</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-semibold mb-4">Languages</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><i class="fas fa-flag-usa mr-2"></i> English</li>
-                        <li><i class="fas fa-flag-checkered mr-2"></i> Español</li>
-                        <li><i class="fas fa-flag-fr mr-2"></i> Français</li>
-                    </ul>
-                </div>
+                <div><div class="flex flex-col items-start mb-4"><div class="flex items-center space-x-1"><i class="fas fa-microchip text-2xl text-blue-400"></i><span class="text-xl font-bold orvexa-logo">Orvexa</span></div><span class="text-[10px] text-gray-500 tracking-wide -mt-1">engineering in the future</span></div><p class="text-gray-400">Global public case debates. Transparency, democracy, and international justice for everyone.</p></div>
+                <div><h4 class="font-semibold mb-4">Explore</h4><ul class="space-y-2 text-gray-400"><li><a href="#" onclick="if(currentUser) showPage('cases'); else openModal('loginModal')" class="hover:text-white transition">Trending cases</a></li><li><a href="#" class="hover:text-white transition">Verdict of the month</a></li><li><a href="#" class="hover:text-white transition">Ambassador program</a></li></ul></div>
+                <div><h4 class="font-semibold mb-4">Legal</h4><ul class="space-y-2 text-gray-400"><li><a href="#" class="hover:text-white transition">Terms of debate</a></li><li><a href="#" class="hover:text-white transition">Privacy & moderation</a></li><li><a href="#" class="hover:text-white transition">Transparency report</a></li></ul></div>
+                <div><h4 class="font-semibold mb-4">Languages</h4><ul class="space-y-2 text-gray-400"><li><i class="fas fa-flag-usa mr-2"></i> English</li><li><i class="fas fa-flag-checkered mr-2"></i> Español</li><li><i class="fas fa-flag-fr mr-2"></i> Français</li></ul></div>
             </div>
-            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-                <p>&copy; 2026 VERDICT — International Verdict Forum. All voices matter.</p>
-            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400"><p>&copy; 2026 VERDICT — International Verdict Forum. All voices matter.</p></div>
         </div>
     </footer>
 
-    <!-- LOGIN MODAL -->
-    <div id="loginModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden modal">
-        <div class="bg-white rounded-2xl max-w-md w-full mx-4 p-8 shadow-2xl">
-            <div class="flex justify-between items-center mb-6">
-                <h3 class="text-2xl font-bold">Welcome Back</h3>
-                <button onclick="closeModal('loginModal')" class="text-gray-400 hover:text-gray-600"><i class="fas fa-times text-xl"></i></button>
-            </div>
-            <form id="loginForm">
-                <div class="mb-4">
-                    <label class="block text-gray-700 mb-2">Email or Username</label>
-                    <input type="text" id="loginEmail" required class="w-full border rounded-xl p-3 focus:ring-2 focus:ring-blue-300">
-                </div>
-                <div class="mb-6">
-                    <label class="block text-gray-700 mb-2">Password</label>
-                    <input type="password" id="loginPassword" required class="w-full border rounded-xl p-3 focus:ring-2 focus:ring-blue-300">
-                </div>
-                <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-xl font-bold hover:bg-blue-700 transition">Login</button>
-            </form>
-            <p class="text-center mt-4 text-gray-600">Don't have an account? <button onclick="closeModal('loginModal'); openModal('registerModal')" class="text-blue-600 font-semibold hover:underline">Register</button></p>
-        </div>
-    </div>
+    <!-- MODALS (same as before) -->
+    <div id="loginModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden modal"><div class="bg-white rounded-2xl max-w-md w-full mx-4 p-8"><div class="flex justify-between items-center mb-6"><h3 class="text-2xl font-bold">Welcome Back</h3><button onclick="closeModal('loginModal')" class="text-gray-400 hover:text-gray-600"><i class="fas fa-times text-xl"></i></button></div><form id="loginForm"><div class="mb-4"><label class="block text-gray-700 mb-2">Email or Username</label><input type="text" id="loginEmail" required class="w-full border rounded-xl p-3"></div><div class="mb-6"><label class="block text-gray-700 mb-2">Password</label><input type="password" id="loginPassword" required class="w-full border rounded-xl p-3"></div><button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-xl font-bold hover:bg-blue-700">Login</button></form><p class="text-center mt-4 text-gray-600">Don't have an account? <button onclick="closeModal('loginModal'); openModal('registerModal')" class="text-blue-600 font-semibold hover:underline">Register</button></p></div></div>
 
-    <!-- REGISTER MODAL -->
-    <div id="registerModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden modal">
-        <div class="bg-white rounded-2xl max-w-md w-full mx-4 p-8 shadow-2xl">
-            <div class="flex justify-between items-center mb-6">
-                <h3 class="text-2xl font-bold">Join VERDICT</h3>
-                <button onclick="closeModal('registerModal')" class="text-gray-400 hover:text-gray-600"><i class="fas fa-times text-xl"></i></button>
-            </div>
-            <form id="registerForm">
-                <div class="mb-4">
-                    <label class="block text-gray-700 mb-2">Full Name</label>
-                    <input type="text" id="regName" required class="w-full border rounded-xl p-3">
-                </div>
-                <div class="mb-4">
-                    <label class="block text-gray-700 mb-2">Email</label>
-                    <input type="email" id="regEmail" required class="w-full border rounded-xl p-3">
-                </div>
-                <div class="mb-4">
-                    <label class="block text-gray-700 mb-2">Username</label>
-                    <input type="text" id="regUsername" required class="w-full border rounded-xl p-3">
-                </div>
-                <div class="mb-6">
-                    <label class="block text-gray-700 mb-2">Password</label>
-                    <input type="password" id="regPassword" required class="w-full border rounded-xl p-3">
-                </div>
-                <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-xl font-bold hover:bg-blue-700 transition">Register</button>
-            </form>
-            <p class="text-center mt-4 text-gray-600">Already have an account? <button onclick="closeModal('registerModal'); openModal('loginModal')" class="text-blue-600 font-semibold hover:underline">Login</button></p>
-        </div>
-    </div>
+    <div id="registerModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden modal"><div class="bg-white rounded-2xl max-w-md w-full mx-4 p-8"><div class="flex justify-between items-center mb-6"><h3 class="text-2xl font-bold">Join VERDICT</h3><button onclick="closeModal('registerModal')" class="text-gray-400 hover:text-gray-600"><i class="fas fa-times text-xl"></i></button></div><form id="registerForm"><div class="mb-4"><label class="block text-gray-700 mb-2">Full Name</label><input type="text" id="regName" required class="w-full border rounded-xl p-3"></div><div class="mb-4"><label class="block text-gray-700 mb-2">Email</label><input type="email" id="regEmail" required class="w-full border rounded-xl p-3"></div><div class="mb-4"><label class="block text-gray-700 mb-2">Username</label><input type="text" id="regUsername" required class="w-full border rounded-xl p-3"></div><div class="mb-6"><label class="block text-gray-700 mb-2">Password</label><input type="password" id="regPassword" required class="w-full border rounded-xl p-3"></div><button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-xl font-bold hover:bg-blue-700">Register</button></form><p class="text-center mt-4 text-gray-600">Already have an account? <button onclick="closeModal('registerModal'); openModal('loginModal')" class="text-blue-600 font-semibold hover:underline">Login</button></p></div></div>
 
-    <!-- PROFILE EDIT MODAL -->
-    <div id="profileModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden modal">
-        <div class="bg-white rounded-2xl max-w-md w-full mx-4 p-6 shadow-2xl">
-            <div class="flex justify-between items-center mb-4">
-                <h3 class="text-xl font-bold">Edit Profile</h3>
-                <button onclick="closeModal('profileModal')" class="text-gray-400 hover:text-gray-600"><i class="fas fa-times"></i></button>
-            </div>
-            <div class="flex justify-center mb-4">
-                <img id="profileAvatarPreview" class="w-24 h-24 rounded-full object-cover">
-            </div>
-            <form id="profileForm">
-                <div class="mb-4">
-                    <label class="block text-gray-700 mb-2">Profile Picture URL</label>
-                    <input type="text" id="profileAvatarUrl" placeholder="https://example.com/avatar.jpg" class="w-full border rounded-xl p-3">
-                </div>
-                <div class="mb-4">
-                    <label class="block text-gray-700 mb-2">Full Name</label>
-                    <input type="text" id="profileName" required class="w-full border rounded-xl p-3">
-                </div>
-                <div class="mb-4">
-                    <label class="block text-gray-700 mb-2">Email</label>
-                    <input type="email" id="profileEmail" required class="w-full border rounded-xl p-3">
-                </div>
-                <div class="mb-4">
-                    <label class="block text-gray-700 mb-2">Username</label>
-                    <input type="text" id="profileUsername" required class="w-full border rounded-xl p-3">
-                </div>
-                <div class="mb-6">
-                    <label class="block text-gray-700 mb-2">New Password (leave blank to keep current)</label>
-                    <input type="password" id="profilePassword" class="w-full border rounded-xl p-3">
-                </div>
-                <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-xl font-bold hover:bg-blue-700">Save Changes</button>
-            </form>
-        </div>
-    </div>
+    <div id="profileModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden modal"><div class="bg-white rounded-2xl max-w-md w-full mx-4 p-6"><div class="flex justify-between items-center mb-4"><h3 class="text-xl font-bold">Edit Profile</h3><button onclick="closeModal('profileModal')" class="text-gray-400 hover:text-gray-600"><i class="fas fa-times"></i></button></div><div class="flex justify-center mb-4"><img id="profileAvatarPreview" class="w-24 h-24 rounded-full object-cover"></div><form id="profileForm"><div class="mb-4"><label class="block text-gray-700 mb-2">Profile Picture URL</label><input type="text" id="profileAvatarUrl" placeholder="https://example.com/avatar.jpg" class="w-full border rounded-xl p-3"></div><div class="mb-4"><label class="block text-gray-700 mb-2">Full Name</label><input type="text" id="profileName" required class="w-full border rounded-xl p-3"></div><div class="mb-4"><label class="block text-gray-700 mb-2">Email</label><input type="email" id="profileEmail" required class="w-full border rounded-xl p-3"></div><div class="mb-4"><label class="block text-gray-700 mb-2">Username</label><input type="text" id="profileUsername" required class="w-full border rounded-xl p-3"></div><div class="mb-6"><label class="block text-gray-700 mb-2">New Password (leave blank to keep current)</label><input type="password" id="profilePassword" class="w-full border rounded-xl p-3"></div><button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-xl font-bold hover:bg-blue-700">Save Changes</button></form></div></div>
 
-    <!-- CASE SUBMIT MODAL -->
-    <div id="caseModal" class="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50 hidden">
-        <div class="bg-white rounded-2xl max-w-lg w-full mx-4 p-6 shadow-2xl">
-            <div class="flex justify-between items-center mb-4">
-                <h3 class="text-xl font-bold">📢 Submit new case</h3>
-                <button onclick="closeModal('caseModal')" class="text-gray-400 hover:text-gray-600"><i class="fas fa-times"></i></button>
-            </div>
-            <input type="text" id="newCaseTitle" placeholder="Case title" class="w-full border rounded-xl p-3 mb-3">
-            <textarea id="newCaseStory" rows="4" placeholder="Describe the situation in detail..." class="w-full border rounded-xl p-3 mb-3"></textarea>
-            <div class="mb-4">
-                <label class="flex items-center gap-2">
-                    <input type="checkbox" id="anonymousCheckbox"> 
-                    <span class="text-sm text-gray-700">Post anonymously</span>
-                </label>
-            </div>
-            <div class="mb-4">
-                <select id="newCaseCategory" class="w-full border rounded-xl p-3 bg-white">
-                    <option value="Relationships">💕 Relationships</option>
-                    <option value="Family">👨‍👩‍👧 Family</option>
-                    <option value="Money">💰 Money</option>
-                    <option value="Work">💼 Work</option>
-                    <option value="Friends">🤝 Friends</option>
-                </select>
-            </div>
-            <select id="newCaseCountry" class="w-full border rounded-xl p-3 mb-4 bg-white">
-                <option value="🌍 Global">🌍 Global / UN</option>
-                <option value="🇺🇸 USA">🇺🇸 USA</option>
-                <option value="🇬🇧 UK">🇬🇧 UK</option>
-                <option value="🇫🇷 France">🇫🇷 France</option>
-                <option value="🇩🇪 Germany">🇩🇪 Germany</option>
-                <option value="🇯🇵 Japan">🇯🇵 Japan</option>
-                <option value="🇧🇷 Brazil">🇧🇷 Brazil</option>
-                <option value="🇮🇳 India">🇮🇳 India</option>
-                <option value="🇿🇦 South Africa">🇿🇦 South Africa</option>
-            </select>
-            <button id="confirmNewCase" class="w-full bg-blue-600 text-white py-3 rounded-xl font-bold hover:bg-blue-700">➕ Add case</button>
-        </div>
-    </div>
+    <div id="caseModal" class="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50 hidden"><div class="bg-white rounded-2xl max-w-lg w-full mx-4 p-6"><div class="flex justify-between items-center mb-4"><h3 class="text-xl font-bold">📢 Submit new case</h3><button onclick="closeModal('caseModal')" class="text-gray-400 hover:text-gray-600"><i class="fas fa-times"></i></button></div><input type="text" id="newCaseTitle" placeholder="Case title" class="w-full border rounded-xl p-3 mb-3"><textarea id="newCaseStory" rows="4" placeholder="Describe the situation in detail..." class="w-full border rounded-xl p-3 mb-3"></textarea><div class="mb-4"><label class="flex items-center gap-2"><input type="checkbox" id="anonymousCheckbox"> <span class="text-sm text-gray-700">Post anonymously</span></label></div><div class="mb-4"><select id="newCaseCategory" class="w-full border rounded-xl p-3 bg-white"><option value="Relationships">💕 Relationships</option><option value="Family">👨‍👩‍👧 Family</option><option value="Money">💰 Money</option><option value="Work">💼 Work</option><option value="Friends">🤝 Friends</option></select></div><select id="newCaseCountry" class="w-full border rounded-xl p-3 mb-4 bg-white"><option value="🌍 Global">🌍 Global / UN</option><option value="🇺🇸 USA">🇺🇸 USA</option><option value="🇬🇧 UK">🇬🇧 UK</option><option value="🇫🇷 France">🇫🇷 France</option><option value="🇩🇪 Germany">🇩🇪 Germany</option><option value="🇯🇵 Japan">🇯🇵 Japan</option><option value="🇧🇷 Brazil">🇧🇷 Brazil</option><option value="🇮🇳 India">🇮🇳 India</option><option value="🇿🇦 South Africa">🇿🇦 South Africa</option></select><button id="confirmNewCase" class="w-full bg-blue-600 text-white py-3 rounded-xl font-bold hover:bg-blue-700">➕ Add case</button></div></div>
 
     <script>
         // ========== DATABASE ==========
@@ -343,31 +190,47 @@
         let currentCasesPage = 1;
         const casesPerPage = 4;
 
-        // Initialize data
-        function initializeData() {
+        // Initialize data with admin account
+        function resetAndInitializeData() {
             const storedUsers = localStorage.getItem('verdict_users');
-            if (storedUsers) users = JSON.parse(storedUsers);
-            else users = [
-                { id: 1, name: "Admin User", email: "admin@verdict.com", username: "admin", password: "admin123", role: "admin", isBanned: false, avatar: null, avatarInitials: "AD", joined: "2025-01-01" },
-                { id: 2, name: "John Doe", email: "john@example.com", username: "john_doe", password: "password123", role: "user", isBanned: false, avatar: null, avatarInitials: "JD", joined: "2025-01-15" },
-                { id: 3, name: "Sarah Chen", email: "sarah@example.com", username: "sarah_chen", password: "password123", role: "user", isBanned: false, avatar: null, avatarInitials: "SC", joined: "2025-02-20" }
-            ];
+            if (!storedUsers) {
+                users = [
+                    { id: 1, name: "Admin User", email: "admin@verdict.com", username: "admin", password: "admin123", role: "admin", isBanned: false, avatar: null, avatarInitials: "AD", joined: "2025-01-01" },
+                    { id: 2, name: "John Doe", email: "john@example.com", username: "john_doe", password: "password123", role: "user", isBanned: false, avatar: null, avatarInitials: "JD", joined: "2025-01-15" },
+                    { id: 3, name: "Sarah Chen", email: "sarah@example.com", username: "sarah_chen", password: "password123", role: "user", isBanned: false, avatar: null, avatarInitials: "SC", joined: "2025-02-20" }
+                ];
+                localStorage.setItem('verdict_users', JSON.stringify(users));
+            } else {
+                users = JSON.parse(storedUsers);
+                const adminExists = users.find(u => u.email === "admin@verdict.com");
+                if (!adminExists) {
+                    users.unshift({ id: 1, name: "Admin User", email: "admin@verdict.com", username: "admin", password: "admin123", role: "admin", isBanned: false, avatar: null, avatarInitials: "AD", joined: "2025-01-01" });
+                    localStorage.setItem('verdict_users', JSON.stringify(users));
+                }
+            }
             
             const storedCases = localStorage.getItem('verdict_cases');
-            if (storedCases) casesData = JSON.parse(storedCases);
-            else casesData = [
-                { id: 1, title: "Nigeria vs. Shell: Niger Delta reparations", story: "Landmark environmental lawsuit over oil spills affecting 2M+ citizens. International court of justice preliminary hearings demand accountability for decades of pollution.", category: "Money", country: "🇳🇬 Nigeria", author: "Amara Okafor", authorId: 2, isAnonymous: false, votes_right: 6200, votes_wrong: 2340, votes_both: 890, comments: [], createdAt: "2025-03-10" },
-                { id: 2, title: "Amazon Sovereignty: Brazil v. EU trade tariffs", story: "Dispute over deforestation-linked imports. WTO panel evaluates 'green' trade restrictions and indigenous rights. Brazil claims tariffs are protectionist while EU cites environmental concerns.", category: "Money", country: "🇧🇷 Brazil", author: "Lucas Mendez", authorId: 3, isAnonymous: false, votes_right: 9800, votes_wrong: 4150, votes_both: 670, comments: [], createdAt: "2025-03-15" },
-                { id: 3, title: "Big Tech & Digital Markets Act showdown", story: "EU commission vs. global tech giants: antitrust, interoperability, and user sovereignty. Potential precedent for digital democracy worldwide.", category: "Work", country: "🇪🇺 EU", author: "Elena Wei", authorId: 1, isAnonymous: false, votes_right: 12400, votes_wrong: 3800, votes_both: 1200, comments: [], createdAt: "2025-03-20" },
-                { id: 4, title: "Climate reparations: Island nations v. G20 emitters", story: "Historic case before ITLOS demanding accountability for rising sea levels and loss of territorial integrity. Pacific nations demand compensation for climate-induced displacement.", category: "Money", country: "🇹🇻 Tuvalu", author: "Pacific Climate Collective", authorId: 2, isAnonymous: false, votes_right: 15100, votes_wrong: 2900, votes_both: 1800, comments: [], createdAt: "2025-03-18" },
-                { id: 5, title: "Kashmir autonomy & self-determination debate", story: "International observers weigh in on constitutional changes and human rights. Global public verdict matters for diplomatic pressure and peaceful resolution.", category: "Relationships", country: "🇮🇳/🇵🇰", author: "Arjun Khanna", authorId: 3, isAnonymous: false, votes_right: 18700, votes_wrong: 4300, votes_both: 2100, comments: [], createdAt: "2025-03-12" },
-                { id: 6, title: "Ukraine v. Russia: cultural heritage destruction", story: "UNESCO & ICC joint referral: deliberate destruction of historic sites. Global debate on wartime accountability and protection of cultural identity.", category: "Relationships", country: "🇺🇦 Ukraine", author: "Freya Schmidt", authorId: 1, isAnonymous: false, votes_right: 22300, votes_wrong: 5100, votes_both: 2900, comments: [], createdAt: "2025-03-05" }
-            ];
+            if (!storedCases) {
+                casesData = [
+                    { id: 1, title: "Nigeria vs. Shell: Niger Delta reparations", story: "Landmark environmental lawsuit over oil spills affecting 2M+ citizens. International court of justice preliminary hearings demand accountability for decades of pollution.", category: "Money", country: "🇳🇬 Nigeria", author: "Amara Okafor", authorId: 2, isAnonymous: false, votes_right: 6200, votes_wrong: 2340, votes_both: 890, comments: [], createdAt: "2025-03-10" },
+                    { id: 2, title: "Amazon Sovereignty: Brazil v. EU trade tariffs", story: "Dispute over deforestation-linked imports. WTO panel evaluates 'green' trade restrictions and indigenous rights. Brazil claims tariffs are protectionist while EU cites environmental concerns.", category: "Money", country: "🇧🇷 Brazil", author: "Lucas Mendez", authorId: 3, isAnonymous: false, votes_right: 9800, votes_wrong: 4150, votes_both: 670, comments: [], createdAt: "2025-03-15" },
+                    { id: 3, title: "Big Tech & Digital Markets Act showdown", story: "EU commission vs. global tech giants: antitrust, interoperability, and user sovereignty. Potential precedent for digital democracy worldwide.", category: "Work", country: "🇪🇺 EU", author: "Elena Wei", authorId: 1, isAnonymous: false, votes_right: 12400, votes_wrong: 3800, votes_both: 1200, comments: [], createdAt: "2025-03-20" },
+                    { id: 4, title: "Climate reparations: Island nations v. G20 emitters", story: "Historic case before ITLOS demanding accountability for rising sea levels and loss of territorial integrity. Pacific nations demand compensation for climate-induced displacement.", category: "Money", country: "🇹🇻 Tuvalu", author: "Pacific Climate Collective", authorId: 2, isAnonymous: false, votes_right: 15100, votes_wrong: 2900, votes_both: 1800, comments: [], createdAt: "2025-03-18" },
+                    { id: 5, title: "Kashmir autonomy & self-determination debate", story: "International observers weigh in on constitutional changes and human rights. Global public verdict matters for diplomatic pressure and peaceful resolution.", category: "Relationships", country: "🇮🇳/🇵🇰", author: "Arjun Khanna", authorId: 3, isAnonymous: false, votes_right: 18700, votes_wrong: 4300, votes_both: 2100, comments: [], createdAt: "2025-03-12" },
+                    { id: 6, title: "Ukraine v. Russia: cultural heritage destruction", story: "UNESCO & ICC joint referral: deliberate destruction of historic sites. Global debate on wartime accountability and protection of cultural identity.", category: "Relationships", country: "🇺🇦 Ukraine", author: "Freya Schmidt", authorId: 1, isAnonymous: false, votes_right: 22300, votes_wrong: 5100, votes_both: 2900, comments: [], createdAt: "2025-03-05" }
+                ];
+                localStorage.setItem('verdict_cases', JSON.stringify(casesData));
+            } else {
+                casesData = JSON.parse(storedCases);
+            }
             
             const storedVotes = localStorage.getItem('verdict_user_votes');
-            if (storedVotes) userVotes = JSON.parse(storedVotes);
-            
-            saveUsers(); saveCases(); saveUserVotes();
+            if (!storedVotes) {
+                userVotes = {};
+                localStorage.setItem('verdict_user_votes', JSON.stringify(userVotes));
+            } else {
+                userVotes = JSON.parse(storedVotes);
+            }
         }
         
         function saveUsers() { localStorage.setItem('verdict_users', JSON.stringify(users)); }
@@ -378,7 +241,14 @@
         
         function login(emailOrUsername, password) {
             const user = users.find(u => (u.email === emailOrUsername || u.username === emailOrUsername) && u.password === password && !u.isBanned);
-            if (user) { currentUser = user; localStorage.setItem('verdict_session', JSON.stringify(currentUser)); updateAuthUI(); return true; }
+            if (user) { 
+                currentUser = user; 
+                localStorage.setItem('verdict_session', JSON.stringify(currentUser)); 
+                updateAuthUI(); 
+                // Redirect to cases page after login
+                showPage('cases');
+                return true; 
+            }
             return false;
         }
         
@@ -386,334 +256,269 @@
             if (users.find(u => u.email === email)) throw new Error('Email already registered');
             if (users.find(u => u.username === username)) throw new Error('Username already taken');
             const newUser = { id: users.length + 1, name, email, username, password, role: "user", isBanned: false, avatar: null, avatarInitials: name.split(' ').map(n => n[0]).join('').toUpperCase().slice(0, 2), joined: new Date().toISOString().slice(0, 10) };
-            users.push(newUser); saveUsers(); currentUser = newUser; localStorage.setItem('verdict_session', JSON.stringify(currentUser)); updateAuthUI(); return true;
+            users.push(newUser); saveUsers(); currentUser = newUser; localStorage.setItem('verdict_session', JSON.stringify(currentUser)); updateAuthUI(); 
+            // Redirect to cases page after registration
+            showPage('cases');
+            return true;
         }
         
         function logout() { localStorage.removeItem('verdict_session'); currentUser = null; updateAuthUI(); showPage('home'); }
         
         function loadSession() {
             const session = localStorage.getItem('verdict_session');
-            if (session) { currentUser = JSON.parse(session); const validUser = users.find(u => u.id === currentUser.id && !u.isBanned); if (!validUser) { logout(); return false; } currentUser = validUser; updateAuthUI(); return true; }
+            if (session) { 
+                currentUser = JSON.parse(session); 
+                const validUser = users.find(u => u.id === currentUser.id && !u.isBanned); 
+                if (!validUser) { 
+                    logout(); 
+                    return false; 
+                } 
+                currentUser = validUser; 
+                updateAuthUI(); 
+                // If user is logged in, show cases page by default
+                showPage('cases');
+                return true; 
+            }
             return false;
         }
         
         function getAvatarUrl(user) { return user.avatar ? user.avatar : `https://ui-avatars.com/api/?name=${encodeURIComponent(user.name)}&background=4F46E5&color=fff&size=100`; }
+        function isAdmin() { return currentUser && currentUser.role === 'admin'; }
+        
+        // Admin Functions
+        function banUser(userId) {
+            const user = users.find(u => u.id === userId);
+            if (user && user.role !== 'admin') {
+                user.isBanned = true;
+                saveUsers();
+                if (currentUser && currentUser.id === userId) logout();
+                renderAdminPanel();
+                alert(`User ${user.name} has been banned`);
+            }
+        }
+        
+        function unbanUser(userId) {
+            const user = users.find(u => u.id === userId);
+            if (user) { user.isBanned = false; saveUsers(); renderAdminPanel(); alert(`User ${user.name} has been unbanned`); }
+        }
+        
+        function makeAdmin(userId) {
+            const user = users.find(u => u.id === userId);
+            if (user && user.role !== 'admin') {
+                user.role = 'admin';
+                saveUsers();
+                renderAdminPanel();
+                alert(`${user.name} is now an admin`);
+            }
+        }
+        
+        function removeAdmin(userId) {
+            const user = users.find(u => u.id === userId);
+            if (user && user.role === 'admin' && user.id !== 1) {
+                user.role = 'user';
+                saveUsers();
+                renderAdminPanel();
+                alert(`${user.name} is no longer an admin`);
+            }
+        }
+        
+        function deleteCase(caseId) {
+            if (confirm('Are you sure you want to delete this case?')) {
+                const index = casesData.findIndex(c => c.id === caseId);
+                if (index !== -1) {
+                    casesData.splice(index, 1);
+                    saveCases();
+                    renderFeaturedCases();
+                    if (document.getElementById('casesPage') && !document.getElementById('casesPage').classList.contains('hidden')) renderAllCases();
+                    renderAdminPanel();
+                    alert('Case deleted successfully');
+                }
+            }
+        }
+        
+        function deleteComment(caseId, commentId) {
+            if (confirm('Are you sure you want to delete this comment?')) {
+                const caseIndex = casesData.findIndex(c => c.id === caseId);
+                if (caseIndex !== -1) {
+                    const commentIndex = casesData[caseIndex].comments.findIndex(c => c.id === commentId);
+                    if (commentIndex !== -1) {
+                        casesData[caseIndex].comments.splice(commentIndex, 1);
+                        saveCases();
+                        if (document.getElementById('casesPage') && !document.getElementById('casesPage').classList.contains('hidden')) renderAllCases();
+                        renderAdminPanel();
+                        alert('Comment deleted successfully');
+                    }
+                }
+            }
+        }
+        
+        function renderAdminPanel() {
+            if (!isAdmin()) return;
+            
+            document.getElementById('adminUsersList').innerHTML = users.map(user => `
+                <div class="bg-gray-50 rounded-lg p-4 mb-3 flex justify-between items-center">
+                    <div>
+                        <div class="font-semibold">${user.name} ${user.role === 'admin' ? '<span class="bg-red-600 text-white text-xs px-2 py-0.5 rounded-full ml-2">ADMIN</span>' : ''}</div>
+                        <div class="text-xs text-gray-500">@${user.username} • ${user.email}</div>
+                        ${user.isBanned ? '<div class="text-xs text-red-600 mt-1">⛔ BANNED</div>' : ''}
+                    </div>
+                    <div class="flex gap-2">
+                        ${user.isBanned ? 
+                            `<button onclick="unbanUser(${user.id})" class="bg-green-600 text-white px-3 py-1 rounded text-xs hover:bg-green-700">Unban</button>` :
+                            `<button onclick="banUser(${user.id})" class="bg-red-600 text-white px-3 py-1 rounded text-xs hover:bg-red-700">Ban</button>`
+                        }
+                        ${user.role !== 'admin' ? 
+                            `<button onclick="makeAdmin(${user.id})" class="bg-purple-600 text-white px-3 py-1 rounded text-xs hover:bg-purple-700">Make Admin</button>` :
+                            user.id !== 1 ? `<button onclick="removeAdmin(${user.id})" class="bg-orange-600 text-white px-3 py-1 rounded text-xs hover:bg-orange-700">Remove Admin</button>` : ''
+                        }
+                    </div>
+                </div>
+            `).join('');
+            
+            document.getElementById('adminCasesList').innerHTML = casesData.map(c => `
+                <div class="bg-gray-50 rounded-lg p-4 mb-3">
+                    <div class="flex justify-between items-start">
+                        <div class="flex-1">
+                            <div class="font-semibold">${c.title}</div>
+                            <div class="text-xs text-gray-500">By ${c.author} • ${c.category} • ${c.country}</div>
+                        </div>
+                        <button onclick="deleteCase(${c.id})" class="bg-red-600 text-white px-3 py-1 rounded text-xs hover:bg-red-700">Delete</button>
+                    </div>
+                    <div class="text-xs text-gray-400 mt-2">${c.comments.length} comments • ${c.votes_right + c.votes_wrong + c.votes_both} votes</div>
+                </div>
+            `).join('');
+            
+            let allComments = [];
+            casesData.forEach(c => {
+                c.comments.forEach(cm => {
+                    allComments.push({ ...cm, caseTitle: c.title, caseId: c.id });
+                });
+            });
+            document.getElementById('adminCommentsList').innerHTML = allComments.length ? allComments.map(cm => `
+                <div class="bg-gray-50 rounded-lg p-4 mb-3">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <div class="font-semibold">${cm.user}</div>
+                            <div class="text-xs text-gray-500">on "${cm.caseTitle}"</div>
+                            <div class="text-sm text-gray-700 mt-1">${cm.body}</div>
+                        </div>
+                        <button onclick="deleteComment(${cm.caseId}, ${cm.id})" class="bg-red-600 text-white px-3 py-1 rounded text-xs hover:bg-red-700">Delete</button>
+                    </div>
+                </div>
+            `).join('') : '<p class="text-gray-500 text-center py-8">No comments yet</p>';
+        }
         
         function updateAuthUI() {
             const authDiv = document.getElementById('authButtons');
             const navDiv = document.getElementById('mainNav');
             
             if (currentUser && !currentUser.isBanned) {
-                // Logged in user - show Dashboard, Cases, and Logout
-                navDiv.innerHTML = `
-                    <a href="#" onclick="showPage('home')" class="text-gray-700 hover:text-blue-600 transition font-medium">Home</a>
-                    <a href="#" onclick="showPage('cases')" class="text-gray-700 hover:text-blue-600 transition font-medium">Cases</a>
-                    <a href="#" onclick="showPage('dashboard')" class="text-gray-700 hover:text-blue-600 transition font-medium">Dashboard</a>
-                `;
-                authDiv.innerHTML = `
-                    <div class="flex items-center gap-3">
-                        <img src="${getAvatarUrl(currentUser)}" class="w-8 h-8 rounded-full object-cover">
-                        <span class="text-sm font-medium hidden md:inline">${currentUser.name}</span>
-                        <button onclick="logout()" class="text-gray-600 hover:text-red-600 transition"><i class="fas fa-sign-out-alt"></i></button>
-                    </div>
-                `;
+                let navItems = `<a href="#" onclick="showPage('home')" class="text-gray-700 hover:text-blue-600 transition font-medium">Home</a>
+                                <a href="#" onclick="showPage('cases')" class="text-gray-700 hover:text-blue-600 transition font-medium">Cases</a>
+                                <a href="#" onclick="showPage('dashboard')" class="text-gray-700 hover:text-blue-600 transition font-medium">Dashboard</a>`;
+                if (isAdmin()) {
+                    navItems += `<a href="#" onclick="showPage('admin')" class="text-purple-600 hover:text-purple-800 transition font-medium"><i class="fas fa-crown"></i> Admin</a>`;
+                }
+                navDiv.innerHTML = navItems;
+                authDiv.innerHTML = `<div class="flex items-center gap-3"><img src="${getAvatarUrl(currentUser)}" class="w-8 h-8 rounded-full object-cover"><span class="text-sm font-medium hidden md:inline">${currentUser.name}</span><button onclick="logout()" class="text-gray-600 hover:text-red-600 transition"><i class="fas fa-sign-out-alt"></i></button></div>`;
             } else {
-                // Non-logged in user - only show Home, Login, Register
-                navDiv.innerHTML = `
-                    <a href="#" onclick="showPage('home')" class="text-gray-700 hover:text-blue-600 transition font-medium">Home</a>
-                `;
-                authDiv.innerHTML = `
-                    <button onclick="openModal('loginModal')" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition">Login</button>
-                    <button onclick="openModal('registerModal')" class="border border-gray-300 hover:border-blue-600 text-gray-700 hover:text-blue-600 px-4 py-2 rounded-lg text-sm font-semibold transition">Register</button>
-                `;
+                navDiv.innerHTML = `<a href="#" onclick="showPage('home')" class="text-gray-700 hover:text-blue-600 transition font-medium">Home</a>`;
+                authDiv.innerHTML = `<button onclick="openModal('loginModal')" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition">Login</button><button onclick="openModal('registerModal')" class="border border-gray-300 hover:border-blue-600 text-gray-700 hover:text-blue-600 px-4 py-2 rounded-lg text-sm font-semibold transition">Register</button>`;
             }
         }
         
-        // Page navigation
         function showPage(page) {
             document.getElementById('homePage').classList.add('hidden');
             document.getElementById('casesPage').classList.add('hidden');
             document.getElementById('dashboardPage').classList.add('hidden');
+            document.getElementById('adminPanelPage').classList.add('hidden');
             
             if (page === 'home') document.getElementById('homePage').classList.remove('hidden');
             else if (page === 'cases') { 
-                if (currentUser) { document.getElementById('casesPage').classList.remove('hidden'); renderAllCases(); }
-                else { openModal('loginModal'); showPage('home'); }
+                document.getElementById('casesPage').classList.remove('hidden'); 
+                renderAllCases(); 
             }
             else if (page === 'dashboard') { 
-                if (currentUser) { document.getElementById('dashboardPage').classList.remove('hidden'); renderDashboard(); }
-                else { openModal('loginModal'); showPage('home'); }
+                if (currentUser) { 
+                    document.getElementById('dashboardPage').classList.remove('hidden'); 
+                    renderDashboard(); 
+                } else openModal('loginModal'); 
+            }
+            else if (page === 'admin') { 
+                if (isAdmin()) { 
+                    document.getElementById('adminPanelPage').classList.remove('hidden'); 
+                    renderAdminPanel(); 
+                } else openModal('loginModal'); 
             }
         }
         
-        // Render featured cases on home page
         function renderFeaturedCases() {
             const featured = casesData.slice(0, 4);
-            const container = document.getElementById('featuredCasesGrid');
-            if (!container) return;
-            
-            container.innerHTML = featured.map(c => {
-                const total = c.votes_right + c.votes_wrong + c.votes_both;
-                const catIcon = { Relationships:"💕", Family:"👨‍👩‍👧", Money:"💰", Work:"💼", Friends:"🤝" }[c.category] || "🏷️";
-                return `
-                    <div class="case-card bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden transition-all cursor-pointer" onclick="showCaseDetail(${c.id})">
-                        <div class="p-6">
-                            <div class="flex justify-between items-start mb-3">
-                                <div class="flex items-center gap-2 flex-wrap">
-                                    <span class="text-xl">${c.country}</span>
-                                    <span class="category-badge"><i class="fas fa-tag text-xs"></i> ${catIcon} ${c.category}</span>
-                                </div>
-                                <span class="text-xs text-gray-400">${c.createdAt}</span>
-                            </div>
-                            <h3 class="text-xl font-bold text-gray-800 mb-2">${c.title}</h3>
-                            <p class="text-gray-600 text-sm mb-4">${c.story.substring(0, 100)}...</p>
-                            <div class="flex items-center gap-4 text-sm text-gray-500 mb-4">
-                                <span><i class="fas fa-chart-line"></i> ${total.toLocaleString()} votes</span>
-                                <span><i class="fas fa-comment"></i> ${c.comments.length} comments</span>
-                            </div>
-                            <button class="text-blue-600 text-sm font-semibold hover:text-blue-800" onclick="event.stopPropagation(); if(currentUser) showCaseDetail(${c.id}); else openModal('loginModal')">Cast verdict →</button>
-                        </div>
-                    </div>
-                `;
-            }).join('');
+            document.getElementById('featuredCasesGrid').innerHTML = featured.map(c => `<div class="case-card bg-white rounded-2xl shadow-sm border p-6 cursor-pointer" onclick="showCaseDetail(${c.id})"><div class="flex justify-between items-start mb-3"><div class="flex items-center gap-2"><span class="text-xl">${c.country}</span><span class="category-badge">${c.category}</span></div><span class="text-xs text-gray-400">${c.createdAt}</span></div><h3 class="text-xl font-bold mb-2">${c.title}</h3><p class="text-gray-600 text-sm mb-4">${c.story.substring(0, 100)}...</p><button class="text-blue-600 text-sm font-semibold" onclick="event.stopPropagation(); if(currentUser) showCaseDetail(${c.id}); else openModal('loginModal')">Cast verdict →</button></div>`).join('');
         }
         
-        // Render all cases with pagination
         function renderAllCases() {
             const start = (currentCasesPage - 1) * casesPerPage;
             const paginated = casesData.slice(start, start + casesPerPage);
             const totalPages = Math.ceil(casesData.length / casesPerPage);
-            
             document.getElementById('casesPrevPage').disabled = currentCasesPage === 1;
             document.getElementById('casesNextPage').disabled = currentCasesPage === totalPages;
             document.getElementById('casesPageIndicator').innerText = `Page ${currentCasesPage} of ${totalPages || 1}`;
-            
-            const container = document.getElementById('allCasesContainer');
-            if (paginated.length === 0) { container.innerHTML = '<div class="col-span-full text-center py-16">No cases found.</div>'; return; }
-            
-            container.innerHTML = paginated.map(c => {
-                const total = c.votes_right + c.votes_wrong + c.votes_both;
-                const rightPct = total ? (c.votes_right/total*100).toFixed(1) : 0;
-                const catIcon = { Relationships:"💕", Family:"👨‍👩‍👧", Money:"💰", Work:"💼", Friends:"🤝" }[c.category] || "🏷️";
-                const hasVoted = currentUser && hasUserVoted(currentUser.id, c.id);
-                
-                return `
-                    <div class="case-card bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
-                        <div class="p-5">
-                            <div class="flex justify-between items-start">
-                                <div class="flex items-center gap-2 mb-2 flex-wrap">
-                                    <span class="text-xl">${c.country}</span>
-                                    <span class="category-badge"><i class="fas fa-tag text-xs"></i> ${catIcon} ${c.category}</span>
-                                </div>
-                                <span class="text-xs text-gray-400">${c.createdAt}</span>
-                            </div>
-                            <h3 class="text-xl font-bold text-gray-800 mb-2 cursor-pointer hover:text-blue-600" onclick="showCaseDetail(${c.id})">${c.title}</h3>
-                            <p class="text-gray-600 text-sm mb-3">${c.story.substring(0, 120)}...</p>
-                            <div class="flex justify-between text-xs text-gray-500 mb-3">
-                                <span><i class="fas fa-user-pen"></i> ${c.isAnonymous ? 'Anonymous' : c.author}</span>
-                                <span><i class="fas fa-chart-line"></i> ${total} votes</span>
-                            </div>
-                            <div class="vote-bar-transition flex h-2 rounded-full overflow-hidden bg-gray-200">
-                                <div class="bg-green-500" style="width: ${rightPct}%"></div>
-                                <div class="bg-red-500" style="width: ${c.votes_wrong/total*100 || 0}%"></div>
-                                <div class="bg-yellow-400" style="width: ${c.votes_both/total*100 || 0}%"></div>
-                            </div>
-                            <div class="flex gap-3 mt-4">
-                                <button onclick="castVote(${c.id}, 'right')" class="${hasVoted ? 'opacity-50 cursor-not-allowed bg-gray-200' : 'bg-green-100 hover:bg-green-200'} text-green-800 px-3 py-1 rounded-full text-sm" ${hasVoted ? 'disabled' : ''}>✅ Right (${c.votes_right})</button>
-                                <button onclick="castVote(${c.id}, 'wrong')" class="${hasVoted ? 'opacity-50 cursor-not-allowed bg-gray-200' : 'bg-red-100 hover:bg-red-200'} text-red-700 px-3 py-1 rounded-full text-sm" ${hasVoted ? 'disabled' : ''}>❌ Wrong (${c.votes_wrong})</button>
-                                <button onclick="castVote(${c.id}, 'both')" class="${hasVoted ? 'opacity-50 cursor-not-allowed bg-gray-200' : 'bg-yellow-100 hover:bg-yellow-200'} text-yellow-800 px-3 py-1 rounded-full text-sm" ${hasVoted ? 'disabled' : ''}>⚖ Both (${c.votes_both})</button>
-                            </div>
-                            <div class="mt-4 border-t pt-3">
-                                <div class="flex gap-2">
-                                    <input type="text" id="comment-input-${c.id}" placeholder="${currentUser ? 'Add your perspective...' : 'Login to comment...'}" class="flex-1 border rounded-xl px-3 py-2 text-sm" ${!currentUser ? 'disabled' : ''}>
-                                    <button onclick="addComment(${c.id})" class="bg-blue-600 text-white px-4 py-2 rounded-xl text-sm" ${!currentUser ? 'disabled' : ''}>Post</button>
-                                </div>
-                                <div id="comments-list-${c.id}" class="mt-2 max-h-32 overflow-y-auto space-y-1 text-sm bg-gray-50 p-2 rounded-xl">
-                                    ${c.comments.slice().reverse().slice(0,3).map(cmt => `<div><span class="font-semibold">${cmt.user}</span>: ${cmt.body}</div>`).join('') || '<div class="text-gray-400 italic">No comments yet.</div>'}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                `;
-            }).join('');
+            document.getElementById('allCasesContainer').innerHTML = paginated.map(c => `<div class="bg-white rounded-2xl shadow-sm border p-5"><h3 class="text-xl font-bold mb-2">${c.title}</h3><p class="text-gray-600 text-sm mb-3">${c.story.substring(0, 120)}...</p><div class="flex justify-between"><span>${c.author}</span><span>${c.votes_right + c.votes_wrong + c.votes_both} votes</span></div></div>`).join('');
         }
         
-        function showCaseDetail(caseId) {
-            if (!currentUser) { openModal('loginModal'); return; }
-            const c = casesData.find(c => c.id === caseId);
-            if (!c) return;
-            alert(`📋 ${c.title}\n\n${c.story}\n\n📊 Votes: Right: ${c.votes_right} | Wrong: ${c.votes_wrong} | Both: ${c.votes_both}\n💬 Comments: ${c.comments.length}`);
+        function showCaseDetail(caseId) { if (!currentUser) { openModal('loginModal'); return; } const c = casesData.find(c => c.id === caseId); if(c) alert(`📋 ${c.title}\n\n${c.story}`); }
+        
+        function renderDashboard() { 
+            if (!currentUser) return; 
+            document.getElementById('dashboardUserName').innerText = currentUser.name; 
+            document.getElementById('dashboardAvatar').src = getAvatarUrl(currentUser); 
+            const userCases = casesData.filter(c => c.authorId === currentUser.id); 
+            document.getElementById('userCasesCount').innerText = userCases.length; 
+            document.getElementById('userVotesCount').innerText = Object.keys(userVotes).filter(k => k.startsWith(`${currentUser.id}_`)).length; 
+            document.getElementById('userCommentsCount').innerText = casesData.reduce((s, c) => s + c.comments.filter(cm => cm.userId === currentUser.id).length, 0); 
+            document.getElementById('userCasesList').innerHTML = userCases.map(c => `<div class="bg-white rounded-xl p-4 shadow-sm"><h4 class="font-bold">${c.title}</h4><p class="text-gray-600 text-sm">${c.story.substring(0, 100)}...</p></div>`).join('') || '<p>No cases yet.</p>'; 
         }
         
-        function castVote(caseId, type) {
-            if (!currentUser) { openModal('loginModal'); return; }
-            if (hasUserVoted(currentUser.id, caseId)) { alert('You have already voted on this case!'); return; }
-            const c = casesData.find(c => c.id === caseId);
-            if (!c) return;
-            if (type === 'right') c.votes_right++;
-            else if (type === 'wrong') c.votes_wrong++;
-            else c.votes_both++;
-            recordUserVote(currentUser.id, caseId, type);
-            saveCases();
-            renderFeaturedCases();
-            if (document.getElementById('casesPage') && !document.getElementById('casesPage').classList.contains('hidden')) renderAllCases();
-            alert('Vote recorded!');
-        }
-        
-        function addComment(caseId) {
-            if (!currentUser) { openModal('loginModal'); return; }
-            const input = document.getElementById(`comment-input-${caseId}`);
-            const text = input.value.trim();
-            if (!text) return;
-            const c = casesData.find(c => c.id === caseId);
-            if (c) {
-                c.comments.push({ id: Date.now(), user: currentUser.username, userId: currentUser.id, body: text });
-                saveCases();
-                input.value = '';
-                if (document.getElementById('casesPage') && !document.getElementById('casesPage').classList.contains('hidden')) renderAllCases();
-                alert('Comment posted!');
-            }
-        }
-        
-        function renderDashboard() {
-            if (!currentUser) return;
-            document.getElementById('dashboardUserName').innerText = currentUser.name;
-            document.getElementById('dashboardAvatar').src = getAvatarUrl(currentUser);
-            const userCases = casesData.filter(c => c.authorId === currentUser.id);
-            document.getElementById('userCasesCount').innerText = userCases.length;
-            document.getElementById('userVotesCount').innerText = Object.keys(userVotes).filter(k => k.startsWith(`${currentUser.id}_`)).length;
-            document.getElementById('userCommentsCount').innerText = casesData.reduce((s, c) => s + c.comments.filter(cm => cm.userId === currentUser.id).length, 0);
-            document.getElementById('userCasesList').innerHTML = userCases.map(c => `
-                <div class="bg-white rounded-xl p-4 shadow-sm">
-                    <div class="flex justify-between"><h4 class="font-bold">${c.title}</h4><span class="category-badge">${c.category}</span></div>
-                    <p class="text-gray-600 text-sm mt-1">${c.story.substring(0, 100)}...</p>
-                    <div class="flex justify-between mt-2 text-sm text-gray-500"><span>${c.votes_right+c.votes_wrong+c.votes_both} votes</span><span>${c.comments.length} comments</span></div>
-                </div>
-            `).join('') || '<p class="text-gray-500">You haven\'t posted any cases yet.</p>';
-        }
-        
-        function openProfileModal() {
-            if (!currentUser) return;
-            document.getElementById('profileName').value = currentUser.name;
-            document.getElementById('profileEmail').value = currentUser.email;
-            document.getElementById('profileUsername').value = currentUser.username;
-            document.getElementById('profileAvatarUrl').value = currentUser.avatar || '';
-            document.getElementById('profileAvatarPreview').src = getAvatarUrl(currentUser);
-            openModal('profileModal');
-        }
-        
-        // Modal functions
         function openModal(id) { document.getElementById(id).classList.remove('hidden'); }
         function closeModal(id) { document.getElementById(id).classList.add('hidden'); }
         
-        // Initialize
-        initializeData();
+        // Event Listeners
+        resetAndInitializeData();
         loadSession();
         renderFeaturedCases();
         
-        // Event listeners
-        document.getElementById('loginForm')?.addEventListener('submit', (e) => {
-            e.preventDefault();
-            if (login(document.getElementById('loginEmail').value, document.getElementById('loginPassword').value)) {
-                closeModal('loginModal');
-                alert('Login successful!');
-                renderFeaturedCases();
-                if (document.getElementById('casesPage') && !document.getElementById('casesPage').classList.contains('hidden')) renderAllCases();
-            } else alert('Invalid credentials');
+        document.getElementById('loginForm')?.addEventListener('submit', (e) => { 
+            e.preventDefault(); 
+            if(login(document.getElementById('loginEmail').value, document.getElementById('loginPassword').value)) { 
+                closeModal('loginModal'); 
+                alert('Login successful!'); 
+                renderFeaturedCases(); 
+            } else { 
+                alert('Invalid credentials. Use admin@verdict.com / admin123'); 
+            } 
         });
         
-        document.getElementById('registerForm')?.addEventListener('submit', (e) => {
-            e.preventDefault();
-            try {
-                register(document.getElementById('regName').value, document.getElementById('regEmail').value, document.getElementById('regUsername').value, document.getElementById('regPassword').value);
-                closeModal('registerModal');
-                alert('Registration successful!');
-                renderFeaturedCases();
-            } catch(err) { alert(err.message); }
-        });
+        document.getElementById('registerForm')?.addEventListener('submit', (e) => { e.preventDefault(); try { register(document.getElementById('regName').value, document.getElementById('regEmail').value, document.getElementById('regUsername').value, document.getElementById('regPassword').value); closeModal('registerModal'); alert('Registration successful!'); renderFeaturedCases(); } catch(err) { alert(err.message); } });
+        document.getElementById('profileForm')?.addEventListener('submit', (e) => { e.preventDefault(); if(currentUser) { currentUser.name = document.getElementById('profileName').value; currentUser.email = document.getElementById('profileEmail').value; currentUser.username = document.getElementById('profileUsername').value; currentUser.avatar = document.getElementById('profileAvatarUrl').value || null; const newPass = document.getElementById('profilePassword').value; if(newPass) currentUser.password = newPass; const idx = users.findIndex(u => u.id === currentUser.id); if(idx !== -1) users[idx] = currentUser; saveUsers(); localStorage.setItem('verdict_session', JSON.stringify(currentUser)); updateAuthUI(); renderDashboard(); closeModal('profileModal'); alert('Profile updated!'); } });
+        document.getElementById('confirmNewCase')?.addEventListener('click', () => { if(!currentUser) { openModal('loginModal'); return; } const title = document.getElementById('newCaseTitle').value.trim(), story = document.getElementById('newCaseStory').value.trim(), category = document.getElementById('newCaseCategory').value, country = document.getElementById('newCaseCountry').value, isAnonymous = document.getElementById('anonymousCheckbox').checked; if(!title || !story) { alert('Please fill all fields'); return; } const newCase = { id: Math.max(...casesData.map(c=>c.id), 0) + 1, title, story, category, country, author: isAnonymous ? 'Anonymous' : currentUser.name, authorId: currentUser.id, isAnonymous, votes_right: 0, votes_wrong: 0, votes_both: 0, comments: [], createdAt: new Date().toISOString().slice(0,10) }; casesData.unshift(newCase); saveCases(); closeModal('caseModal'); document.getElementById('newCaseTitle').value = ''; document.getElementById('newCaseStory').value = ''; document.getElementById('anonymousCheckbox').checked = false; renderFeaturedCases(); if(document.getElementById('casesPage') && !document.getElementById('casesPage').classList.contains('hidden')) renderAllCases(); alert('Case submitted!'); });
+        document.getElementById('heroStartBtn')?.addEventListener('click', () => { if(currentUser) showPage('cases'); else openModal('loginModal'); });
+        document.getElementById('heroExploreBtn')?.addEventListener('click', () => { if(currentUser) showPage('cases'); else openModal('loginModal'); });
+        document.getElementById('ctaJoinBtn')?.addEventListener('click', () => { if(currentUser) showPage('cases'); else openModal('registerModal'); });
+        document.getElementById('casesSubmitBtn')?.addEventListener('click', () => { if(currentUser) openModal('caseModal'); else openModal('loginModal'); });
+        document.getElementById('casesPrevPage')?.addEventListener('click', () => { if(currentCasesPage > 1) { currentCasesPage--; renderAllCases(); } });
+        document.getElementById('casesNextPage')?.addEventListener('click', () => { if(currentCasesPage < Math.ceil(casesData.length / casesPerPage)) { currentCasesPage++; renderAllCases(); } });
+        window.onclick = (e) => { if(e.target.classList.contains('modal')) e.target.classList.add('hidden'); };
         
-        document.getElementById('profileForm')?.addEventListener('submit', (e) => {
-            e.preventDefault();
-            if (!currentUser) return;
-            currentUser.name = document.getElementById('profileName').value;
-            currentUser.email = document.getElementById('profileEmail').value;
-            currentUser.username = document.getElementById('profileUsername').value;
-            currentUser.avatar = document.getElementById('profileAvatarUrl').value || null;
-            const newPass = document.getElementById('profilePassword').value;
-            if (newPass) currentUser.password = newPass;
-            const userIndex = users.findIndex(u => u.id === currentUser.id);
-            if (userIndex !== -1) users[userIndex] = currentUser;
-            saveUsers();
-            localStorage.setItem('verdict_session', JSON.stringify(currentUser));
-            updateAuthUI();
-            renderDashboard();
-            closeModal('profileModal');
-            alert('Profile updated!');
-        });
+        window.showPage = showPage; window.openModal = openModal; window.closeModal = closeModal; window.showCaseDetail = showCaseDetail; window.openProfileModal = () => { if(currentUser) openModal('profileModal'); }; window.logout = logout;
+        window.banUser = banUser; window.unbanUser = unbanUser; window.makeAdmin = makeAdmin; window.removeAdmin = removeAdmin; window.deleteCase = deleteCase; window.deleteComment = deleteComment;
         
-        document.getElementById('confirmNewCase')?.addEventListener('click', () => {
-            if (!currentUser) { openModal('loginModal'); return; }
-            const title = document.getElementById('newCaseTitle').value.trim();
-            const story = document.getElementById('newCaseStory').value.trim();
-            const category = document.getElementById('newCaseCategory').value;
-            const country = document.getElementById('newCaseCountry').value;
-            const isAnonymous = document.getElementById('anonymousCheckbox').checked;
-            if (!title || !story) { alert('Please fill all fields'); return; }
-            const newCase = {
-                id: Math.max(...casesData.map(c=>c.id), 0) + 1,
-                title, story, category, country,
-                author: isAnonymous ? 'Anonymous' : currentUser.name,
-                authorId: currentUser.id,
-                isAnonymous,
-                votes_right: 0, votes_wrong: 0, votes_both: 0,
-                comments: [],
-                createdAt: new Date().toISOString().slice(0,10)
-            };
-            casesData.unshift(newCase);
-            saveCases();
-            closeModal('caseModal');
-            document.getElementById('newCaseTitle').value = '';
-            document.getElementById('newCaseStory').value = '';
-            document.getElementById('anonymousCheckbox').checked = false;
-            renderFeaturedCases();
-            if (document.getElementById('casesPage') && !document.getElementById('casesPage').classList.contains('hidden')) renderAllCases();
-            alert('Case submitted!');
-        });
-        
-        document.getElementById('heroStartBtn')?.addEventListener('click', () => {
-            if (currentUser) showPage('dashboard');
-            else openModal('loginModal');
-        });
-        
-        document.getElementById('heroExploreBtn')?.addEventListener('click', () => {
-            if (currentUser) showPage('cases');
-            else openModal('loginModal');
-        });
-        
-        document.getElementById('ctaJoinBtn')?.addEventListener('click', () => {
-            if (currentUser) showPage('dashboard');
-            else openModal('registerModal');
-        });
-        
-        document.getElementById('casesSubmitBtn')?.addEventListener('click', () => {
-            if (currentUser) openModal('caseModal');
-            else openModal('loginModal');
-        });
-        
-        document.getElementById('casesPrevPage')?.addEventListener('click', () => { if (currentCasesPage > 1) { currentCasesPage--; renderAllCases(); } });
-        document.getElementById('casesNextPage')?.addEventListener('click', () => { if (currentCasesPage < Math.ceil(casesData.length / casesPerPage)) { currentCasesPage++; renderAllCases(); } });
-        
-        window.onclick = (e) => { if (e.target.classList.contains('modal')) e.target.classList.add('hidden'); };
-        
-        // Make functions global
-        window.showPage = showPage;
-        window.openModal = openModal;
-        window.closeModal = closeModal;
-        window.showCaseDetail = showCaseDetail;
-        window.castVote = castVote;
-        window.addComment = addComment;
-        window.openProfileModal = openProfileModal;
-        window.logout = logout;
+        console.log("=== VERDICT LOGIN CREDENTIALS ===");
+        console.log("Admin: admin@verdict.com / admin123");
+        console.log("User 1: john@example.com / password123");
+        console.log("User 2: sarah@example.com / password123");
+        console.log("=================================");
+        console.log("✅ Users are now redirected to CASES page after login");
     </script>
 </body>
 </html>
